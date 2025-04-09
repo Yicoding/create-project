@@ -5,10 +5,8 @@ const { MODE } = import.meta.env;
 export const isDev: boolean = MODE === 'development';
 // 是否为mock环境
 export const isMock: boolean = MODE === 'mock';
-// 是否为mockflow环境
-export const isMockFlow: boolean = MODE === 'mockflow';
 // 是否为本地环境
-export const isLocal: boolean = isDev || isMock || isMockFlow;
+export const isLocal: boolean = isDev || isMock;
 // 是否为测试环境
 export const isTest: boolean = MODE === 'test';
 // 是否为生产环境

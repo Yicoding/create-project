@@ -24,17 +24,25 @@ nav:
 
 ```ts | pure
 import { create } from 'zustand';
+import { UserInfo } from '@/utils/types';
+import { defaultUserInfo } from '@/utils/constants';
 
 /**
- * 字段
- */
+  * 字段
+  */
 type State = {
   bears: number;
+  sdkReady: boolean;
+  userInfo: UserInfo;
 };
-
+const stateField = {
+  bears: 0,
+  sdkReady: false,
+  userInfo: defaultUserInfo,
+};
 /**
- * 方法
- */
+  * 方法
+  */
 type Action = {
   increase: () => void;
   increaseAsync: () => Promise<void>;
@@ -42,18 +50,14 @@ type Action = {
 
 export type BearState = State & Action;
 
-const stateField = {
-  bears: 0,
-};
-
 export const useBearStore = create<BearState>()((set, get) => ({
   ...stateField,
   increase: () => set((state) => ({ bears: state.bears + 1 })),
   increaseAsync: async () => {
     set({
-      bears: get().bears + 1,
+      bears: get().bears + 1
     });
-  },
+  }
 }));
 
 export const { setState } = useBearStore;
@@ -61,22 +65,25 @@ export const { setState } = useBearStore;
 
 ## 使用 store
 
-```ts | pure
-import React from 'react';
-import { Button } from 'antd';
-import { useBearStore } from '@/store';
+```tsx | pure
+import { FC } from 'react';
+import { useBearStore, setState } from '@/store';
 import type { BearState } from '@/store';
-import './index.less';
 
-const HomeOne = () => {
-  const { bears, increase } = useBearStore((state: BearState) => state);
+const Index: FC = () => {
+
+  const { bears, increase, } = useBearStore((state: BearState) => state);
+
   return (
-    <div className="home-one-root">
-      {bears} around here...
-      <Button onClick={increase}>one up</Button>
+    <div>
+      <div className={s.link}>
+        store bears的值为: {bears}
+        <button onClick={increase}>increase</button>
+        <button onClick={() => setState({ bears: bears + 1 })}>setState</button>
+      </div>
     </div>
   );
 };
 
-export default HomeOne;
+export default Index;
 ```

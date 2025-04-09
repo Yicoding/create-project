@@ -20,7 +20,7 @@ nav:
 server: {
   proxy: {
     '/proxy_url': {
-      target: 'https://m.test.ximalaya.com',
+      target: 'https://m.test.xxx.com',
       changeOrigin: true,
       rewrite: (path) => path.replace(/^\/proxy_url/, '')
     }

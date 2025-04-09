@@ -14,7 +14,7 @@ nav:
 下载模版：
 
 ```bash
-npx -p @xmly/create-project create-project download [模板名称]
+npx -p @ecode/create-project create-project download [模板名称]
 ```
 
 `or`
@@ -22,13 +22,13 @@ npx -p @xmly/create-project create-project download [模板名称]
 支持输入项目名称：
 
 ```bash
-npx -p @xmly/create-project create-project download [模板名称] [项目名称]
+npx -p @ecode/create-project create-project download [模板名称] [项目名称]
 ```
 
 支持下载模版后替换内容：
 
 ```bash
-npx -p @xmly/create-project create-project download [模板名称] -r [旧内容] [新内容]
+npx -p @ecode/create-project create-project download [模板名称] -r [旧内容] [新内容]
 ```
 
 ## 要求的模版目录文件

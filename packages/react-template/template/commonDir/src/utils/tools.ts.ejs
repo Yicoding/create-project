@@ -36,12 +36,12 @@ export function getCookie(name: string) {
   * 获取当前的运行平台
   */
 export function getPlatform(): Platform {
-  let platform: Platform = 'iting';
+  let platform: Platform = 'xxxxx';
 
   const ua = window.navigator.userAgent;
   const impl = getCookie('impl') || '';
-  if (/iting/i.test(ua) || /iting/i.test(impl)) {
-    platform = 'iting';
+  if (/xxxxx/i.test(ua) || /xxxxx/i.test(impl)) {
+    platform = 'xxxxx';
   } else if (/wxwork/i.test(ua)) {
     // 企业微信
     platform = 'wecom';

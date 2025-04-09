@@ -3,7 +3,7 @@
 /**
  * 编译环境
  */
-declare type BuildEnv = 'development' | 'mock' | 'test' | 'production' | 'mockflow';
+declare type BuildEnv = 'development' | 'mock' | 'test' | 'production';
 
 /**
  * 多编译环境变量约束
@@ -16,7 +16,7 @@ interface ImportMetaEnv {
   /** 静态资源 url */
   readonly VITE_PUBLIC_URL: string;
   /** 接口请求域名 */
-  readonly VITE_M_ORIGIN: string;
+  readonly VITE_ORIGIN: string;
   // 更多环境变量...
 }
 
@@ -26,7 +26,7 @@ interface ImportMeta {
 
 <%_ if (platform === 'mobile') { _%>
 interface Window {
-  ly: {
+  xxx: {
     ready: (cb: () => void) => void;
     error: () => void;
     config: (data: any) => void;

@@ -17,8 +17,8 @@ nav:
 
 ## 下载地址
 
-[点我下载：](https://aod.cos.tx.xmcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg)
-https://aod.cos.tx.xmcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg
+[点我下载：](https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg)
+https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg
 
 ## 安装
 
@@ -67,3 +67,4 @@ https://aod.cos.tx.xmcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5AB
 转换完成：
 
 ![](images/cli-6.png)
+

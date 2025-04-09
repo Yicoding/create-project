@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { RouterProvider } from 'react-router-dom';
-import * as Sentry from '@sentry/react';
 import router from '@/router';
 <% if (platform === 'mobile') { %>
 import { hideLoading, platformType, setTheme } from '@/utils/tools';
@@ -43,14 +42,12 @@ function App() {
   <%_ } _%>
 
   return (
-    <Sentry.ErrorBoundary>
-      <RouterProvider
-        router={router}
-        future={{
-          v7_startTransition: true,
-        }}
-      />
-    </Sentry.ErrorBoundary>
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
   )
 }
 

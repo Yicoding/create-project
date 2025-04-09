@@ -75,7 +75,7 @@ export function share(params: ShareParams) {
               <img
                 onClick={exit}
                 className={s.close}
-                src="https://imagev2.xmcdn.com/group48/M01/E3/64/wKgKlVt82uKyOwAXAAABk5iKH2k391.png!op_type=9&strip=1&quality=0&unlimited=1"
+                src="https://imagev2.xxcdn.com/group48/M01/E3/64/wKgKlVt82uKyOwAXAAABk5iKH2k391.png!op_type=9&strip=1&quality=0&unlimited=1"
               />
               <div className={s.title}>即刻分享</div>
               <button

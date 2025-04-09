@@ -1,6 +1,6 @@
 {
   "private": true,
-  "author": "kaiyu.kong <kaiyu.kong@ximalaya.com>",
+  "author": "kaiyu.kong",
   "workspaces": [
     "packages/*"
   ],

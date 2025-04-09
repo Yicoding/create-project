@@ -5,11 +5,10 @@
   "scripts": {
     "dev": "vite --mode development",
     "mock": "vite --mode mock",
-    "mock-flow": "vite --mode mockflow",
     "start-test": "vite --mode test",
     "build-dev": "tsc && vite build --mode development",
     "build-test": "tsc && vite build --mode test",
-    "build-prod": "tsc && vite build --mode production && node ./uploadSourcemaps.js",
+    "build-prod": "tsc && vite build --mode production",
     "build-analyze": "VITE_BUILD_ANALYZER=true yarn build-prod",
     "preview": "vite preview",
     "lint": "eslint --fix --ext .ts,.tsx,.js,.jsx --quiet ./",
@@ -18,9 +17,6 @@
   },
   "dependencies": {
     "@emotion/react": "^11.13.3",
-    "@sentry/react": "^8.4.0",
-    "@xmly/sniffing-sdk": "^3.1.0",
-    "@xmly/xmrep": "^2.4.24",
     "axios": "^1.7.2",
     "clsx": "^2.0.0",
     "react": "^18.3.1",
@@ -37,7 +33,6 @@
   },
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
-    "@sentry/cli": "^2.39.0",
     "@commitlint/config-conventional": "^19.2.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
@@ -79,8 +74,5 @@
   },
   "eslintConfig": {
     "extends": "react-app"
-  },
-  "yxpm": {
-    "output": "dist"
   }
 }

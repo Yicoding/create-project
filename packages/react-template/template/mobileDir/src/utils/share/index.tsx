@@ -16,20 +16,11 @@ function wechatShare(params: ShareParams): void {
 
 // 分享弹窗
 export function share(params: ShareParams) {
-  const { title, link, callBack, isClick = true } = params;
+  const { callBack, isClick = true } = params;
   // 站内
-  if (platformType === 'iting') {
-    hybridShell('util.share', {
+  if (platformType === 'xxxxx') {
+    hybridShell('xxx.share', {
       ...params,
-      channel: ['weixin', 'weixinGroup', 'qq', 'tSina', 'url'],
-      params: {
-        // 埋点参数
-        shareTemplate: '103',
-        ubt_currPage: title,
-        ubt_contentType: '',
-        ubt_contentId: '',
-        ubt_url: link
-      },
       success() {
         callBack?.();
       }
@@ -68,7 +59,7 @@ export function share(params: ShareParams) {
               <img
                 onClick={exit}
                 className={s.close}
-                src="https://imagev2.xmcdn.com/group48/M01/E3/64/wKgKlVt82uKyOwAXAAABk5iKH2k391.png!op_type=9&strip=1&quality=0&unlimited=1"
+                src="https://imagev2.xxcdn.com/group48/M01/E3/64/wKgKlVt82uKyOwAXAAABk5iKH2k391.png!op_type=9&strip=1&quality=0&unlimited=1"
               />
               <div className={s.title}>即刻分享</div>
               <button
@@ -102,9 +93,9 @@ export function setShareMenu({
   // 不可分享
   if (!canShare) {
     // 站内
-    if (platformType === 'iting') {
+    if (platformType === 'xxxxx') {
       // 清除右上角按钮
-      return hybridShell('nav.setMenu', {
+      hybridShell('xxx.setMenu', {
         items: []
       });
     }
@@ -116,9 +107,9 @@ export function setShareMenu({
   } else {
     // 设置右上角分享
     if (params) {
-      if (platformType === 'iting') {
-        return hybridShell('nav.setMenu', {
-          items: [{ id: '1', icon: 'share', text: '分享' }],
+      if (platformType === 'xxxxx') {
+        return hybridShell('xxx.setMenu', {
+          items: [{ icon: 'share', text: '分享' }],
           success(): void {
             share(params)
           },

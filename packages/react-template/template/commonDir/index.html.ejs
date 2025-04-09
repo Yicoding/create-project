@@ -16,22 +16,11 @@
   <meta name="format-detection" content="telephone=no,email=no,date=no,address=no" />
   <meta name="theme-color" content="#000000" />
   <meta name="robots" content="all" />
-  <meta name="keywords" content="喜马拉雅" />
-  <meta name="description" content="喜马拉雅" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
   <link rel="icon" href="%VITE_PUBLIC_URL%/favicon.ico" />
   <link rel="manifest" href="%VITE_PUBLIC_URL%/manifest.json" />
-  <link rel="dns-prefetch" href="//www.ximalaya.com" />
-  <link rel="dns-prefetch" href="//m.ximalaya.com" />
-  <link rel="dns-prefetch" href="//mobile.ximalaya.com" />
-  <link rel="dns-prefetch" href="//api.ximalaya.com" />
-  <link rel="dns-prefetch" href="//passport.ximalaya.com" />
-  <link rel="dns-prefetch" href="//mermaid.ximalaya.com" />
-  <link rel="dns-prefetch" href="//s1.xmcdn.com" />
-  <link rel="dns-prefetch" href="//imagev2.xmcdn.com" />
-  <link rel="dns-prefetch" href="//fdfs.xmcdn.com" />
-  <link rel="dns-prefetch" href="//fdfs.cos.xmcdn.com" />
-  <link rel="dns-prefetch" href="//www.qchannel03.cn" />
-  <title>喜马拉雅</title>
+  <title></title>
   <style>
     .app_loading_hidden {
       display: none;
@@ -165,48 +154,48 @@
   <script>
     this.globalThis || (this.globalThis = this) // 兼容低版本浏览器Error: globalThis is not defined
   </script>
-  <%_ if (platform === 'mobile' || platform === 'pc') { _%>
-  <!-- 处理rem -->
-  <script type="text/javascript">
-    !(function (doc, win) {
-      try {
-        var docEl = doc.documentElement;
-        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
-        var recalc = function () {
-          var clientWidth = docEl.clientWidth;
-          if (!clientWidth) return;
-          docEl.style.fontSize = 10 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
-        };
-        if (!doc.addEventListener) return;
-        win.addEventListener(resizeEvt, recalc, false);
-        doc.addEventListener('DOMContentLoaded', recalc, false);
-      } catch (error) {
-        console.log('计算rem error: ', error);
-      }
-    })(document, window);
-  </script>
-  <!-- 添加vconsole -->
-  <script type="text/javascript">
-    !(function (doc) {
-      try {
-        var _log_debug = /_log_debug/.test(window.location.href);
-        if (_log_debug) {
-          var script = doc.createElement('script');
-          script.type = 'text/javascript';
-          script.src =
-            '//s1.xmcdn.com/yx/activity-maker-lib/last/dist/vconsole@3.15.1/vconsole.min.js';
-          doc.body.appendChild(script);
-          script.onload = function () {
-            var vConsole = new window.VConsole();
+  <%_ if (platform==='mobile' || platform==='pc' ) { _%>
+    <!-- 处理rem -->
+    <script type="text/javascript">
+      !(function (doc, win) {
+        try {
+          var docEl = doc.documentElement;
+          resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+          var recalc = function () {
+            var clientWidth = docEl.clientWidth;
+            if (!clientWidth) return;
+            docEl.style.fontSize = 10 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
           };
+          if (!doc.addEventListener) return;
+          win.addEventListener(resizeEvt, recalc, false);
+          doc.addEventListener('DOMContentLoaded', recalc, false);
+        } catch (error) {
+          console.log('计算rem error: ', error);
         }
-      } catch (error) {
-        console.error(error);
-      }
-    })(document);
-  </script>
-  <%_ } _%>
-  <script type="module" src="/src/main.tsx"></script>
+      })(document, window);
+    </script>
+    <!-- 添加vconsole -->
+    <script type="text/javascript">
+      !(function (doc) {
+        try {
+          var _log_debug = /_log_debug/.test(window.location.href);
+          if (_log_debug) {
+            var script = doc.createElement('script');
+            script.type = 'text/javascript';
+            script.src =
+              '//unpkg.com/vconsole@3.15.1/dist/vconsole.min.js';
+            doc.body.appendChild(script);
+            script.onload = function () {
+              var vConsole = new window.VConsole();
+            };
+          }
+        } catch (error) {
+          console.error(error);
+        }
+      })(document);
+    </script>
+    <%_ } _%>
+      <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>

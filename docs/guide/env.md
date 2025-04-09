@@ -30,7 +30,7 @@ nav:
 
 ### VITE_BASE_ROUTE_NAME
 
-线上路由的 `basename`，例如：云效部署的项目都会放在 `/gatekeeper/项目名` 下
+线上路由的 `basename`，例如：部署的项目统一放在 `/gatekeeper/项目名` 下
 
 ### MODE（编译环境）
 
@@ -41,18 +41,18 @@ nav:
 | test        | 测试环境     |
 | production  | 正式环境     |
 
-### VITE_YX_STATIC_ORIGIN（云效静态资源前缀）
+### VITE_STATIC_ORIGIN（云效静态资源前缀）
 
 | 编译环境    | 对应的值                            |
 | :---------- | :---------------------------------- |
 | development | 本地开发环境无需配置                |
 | mock        | mock 环境无需配置                   |
-| test        | `https://static2.test.ximalaya.com` |
-| production  | `https://s1.xmcdn.com`              |
+| test        | `https://static2.test.xxx.com` |
+| production  | `https://s1.xxcdn.com`              |
 
 ### VITE_PUBLIC_URL
 
-云效静态资源存放地址：`$VITE_YX_STATIC_ORIGIN/yx/$npm_package_name/last/dist`
+静态资源存放地址：`$VITE_STATIC_ORIGIN/yx/$npm_package_name/dist`
 
 ### VITE_ORIGIN（接口请求域名）
 
@@ -62,8 +62,8 @@ nav:
 | :---------- | :----------------------------------------- |
 | development | `/proxy_url`：本地开发可能需要配置跨域 |
 | mock        | mock 环境无需配置                          |
-| test        | `https://m.test.ximalaya.com`  |
-| production  | `https://m.ximalaya.com`                  |
+| test        | `https://m.test.xxx.com`  |
+| production  | `https://m.xxx.com`                  |
 
 ## 定义环境变量 ts 类型
 

@@ -23,8 +23,8 @@ export const hybridShell = (
     [key: string]: any;
   }
 ): any => {
-  if (window?.ly?.invokeApp) {
-    window.ly.invokeApp(api, {
+  if (window?.xxx?.invokeApp) {
+    window.xxx.invokeApp(api, {
       ...(config || {})
     });
   }
@@ -37,7 +37,7 @@ export const hybridShell = (
 export const loadJsSdk = async () => {
   // 站内
   if (platformType === 'iting') {
-    await loadScript(XIMA_JSSDK_SCRIPT);
+    await loadScript(XXX_JSSDK_SCRIPT);
   } else if (platformType === 'wechat') {
     // 微信
     await loadScript(WECHAT_JSSDK_SCRIPT);
@@ -62,16 +62,16 @@ export const registerWechatSdk = async () => {
 };
 ```
 
-## 注册喜马jssdk
+## 注册xxx-jssdk
 
 ```ts
 export const registerSdk = async () => {
   await loadJsSdk();
   // 站内
   if (platformType === 'iting') {
-    window?.ly?.config({
+    window?.xxx?.config({
       appId: XIMA_JSSDK_APPID,
-      apiList: XIMA_JSSDK_APIS
+      apiList: XXX_JSSDK_APIS
     });
   } else if (platformType === 'wechat') {
     // 微信
@@ -89,14 +89,14 @@ export const waitWechatReady = async (cb: () => void) => {
 }
 ```
 
-## 喜马sdk-ready
+## xxx-sdk-ready
 
 ```ts
 export const waitSdkReady = () =>
   new Promise(async (resolve) => {
     await registerSdk();
     if (platformType === 'iting') {
-      window?.ly?.ready(() => resolve(true));
+      window?.xxx?.ready(() => resolve(true));
     } else if (platformType === 'wechat') {
       window?.wx?.ready(() => resolve(true));
     } else {
@@ -117,16 +117,14 @@ export function openNewWebview(url: string) {
 ## 登录
 
 ```ts
+/** 登录 */
 export function login() {
   // 站内
-  if (platformType === 'iting') {
+  if (platformType === 'xxxxx') {
     // 登录完成后，页面会reload
-    hybridShell('account.login', {
-      halfScreen: false,
-      control: false
-    });
+    hybridShell('xxx.login');
   } else {
-    window.location.href = `${PASSPORT_ORIGIN}/page/m/login?fromUri=${encodeURIComponent(window.location.href)}`;
+    window.location.href = `${PASSPORT_ORIGIN}/xxx/login?fromUri=${encodeURIComponent(window.location.href)}`;
   }
 }
 ```

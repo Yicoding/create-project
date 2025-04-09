@@ -39,17 +39,35 @@ export default defineConfig(() => {
 利用 ES2020 中引入的一个新功能，动态导入多个模块
 
 ```ts | pure
-let modules = [];
-if (import.meta && import.meta?.glob) {
-  modules = import.meta?.glob('./**/*.ts');
+/**
+ * 使用Vite的import.meta.glob API
+ * 注意：
+ * 1. 在TypeScript中，import.meta.glob在运行时可用，但在类型检查时会被识别为不存在
+ * 2. 因此，需要使用类型断言来处理
+ */
+// 使用Vite提供的import.meta.glob API
+interface ViteImportMeta extends ImportMeta {
+  glob: (pattern: string) => Record<string, () => Promise<any>>;
 }
 
-export default modules.map((o) => o.default);
+// 使用类型检查和断言
+const isViteMeta = (meta: any): meta is ViteImportMeta =>
+  typeof meta.glob === 'function';
+
+// 使用类型断言处理导入
+const viteImportMeta = isViteMeta(import.meta) ? import.meta : null;
+const globModules = viteImportMeta
+  ? (viteImportMeta as ViteImportMeta).glob('./**/*.ts')
+  : {};
+
+const modules = Object.values(globModules);
+
+export default modules;
+
+
 ```
 
 ## mock 文件格式
-
-### 导出多个接口
 
 多个相同前缀的接口可以放在同一个文件内
 
@@ -57,50 +75,20 @@ export default modules.map((o) => o.default);
 // 返回数组，同一个类型的接口可以放在同一个文件中
 export default [
   {
-    url: '/user/login',
-    method: 'get',
-    response: ({ query }) => {
-      return {
-        ret: 0,
-        msg: 'success',
-        data: 'ok',
-      };
-    },
-  },
-  {
-    url: '/user/info',
-    method: 'post',
-    timeout: 2000,
-    response: {
-      ret: 0,
-      msg: 'success',
-      data: {
-        name: 'vben',
-      },
-    },
+    "method": "GET",
+    "url": "(.*)/user/info",
+    "name": "获取用户信息",
+    "response": {
+      "code": 0,
+      "msg": "success",
+      "data": {
+        "userId": 1281512111,
+        "login": true
+      }
+    }
   },
 ];
-```
 
-### 导出单个接口
-
-```ts | pure
-export default {
-  url: '/api/text',
-  method: 'post',
-  rawResponse: async (req, res) => {
-    let reqbody = '';
-    await new Promise((resolve) => {
-      req.on('data', (chunk) => {
-        reqbody += chunk;
-      });
-      req.on('end', () => resolve(undefined));
-    });
-    res.setHeader('Content-Type', 'text/plain');
-    res.statusCode = 200;
-    res.end(`hello, ${reqbody}`);
-  },
-};
 ```
 
 ### 支持文件嵌套
@@ -108,8 +96,6 @@ export default {
 ```bash
 ├── mock                        # mock目录
 │   ├── webapi                  # mock文件目录
-│   ├── ├── api                 # mock文件目录
-│   ├── ├── ├── text.ts
-│   │   ├── login.ts
+│   │   ├── user.ts
 │   ├── index                   # mock数据入口文件
 ```

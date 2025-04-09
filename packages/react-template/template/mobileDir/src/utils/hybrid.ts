@@ -2,9 +2,9 @@ import { UserInfo } from '@/utils/types';
 import { platformType } from '@/utils/tools'
 import {
   XIMA_JSSDK_APPID,
-  XIMA_JSSDK_APIS,
+  XXX_JSSDK_APIS,
   UNLOGIN_USER,
-  XIMA_JSSDK_SCRIPT,
+  XXX_JSSDK_SCRIPT,
   WECHAT_JSSDK_SCRIPT,
   WECHAT_JSSDK_APIS,
   WECHAT_OPENTAGLIST,
@@ -20,8 +20,8 @@ export const hybridShell = (
     [key: string]: any;
   }
 ): any => {
-  if (window?.ly?.invokeApp) {
-    window.ly.invokeApp(api, {
+  if (window?.xxx?.invokeApp) {
+    window.xxx.invokeApp(api, {
       ...(config || {})
     });
   }
@@ -30,8 +30,8 @@ export const hybridShell = (
 // 加载jssdk
 export const loadJsSdk = async () => {
   // 站内
-  if (platformType === 'iting') {
-    await loadScript(XIMA_JSSDK_SCRIPT);
+  if (platformType === 'xxxxx') {
+    await loadScript(XXX_JSSDK_SCRIPT);
   } else if (platformType === 'wechat') {
     // 微信
     await loadScript(WECHAT_JSSDK_SCRIPT);
@@ -56,10 +56,10 @@ export const registerWechatSdk = async () => {
 export const registerSdk = async () => {
   await loadJsSdk();
   // 站内
-  if (platformType === 'iting') {
-    window?.ly?.config({
+  if (platformType === 'xxxxx') {
+    window?.xxx?.config({
       appId: XIMA_JSSDK_APPID,
-      apiList: XIMA_JSSDK_APIS
+      apiList: XXX_JSSDK_APIS
     });
   } else if (platformType === 'wechat') {
     // 微信
@@ -76,8 +76,8 @@ export const waitWechatReady = async (cb: () => void) => {
 export const waitSdkReady = () =>
   new Promise(async (resolve) => {
     await registerSdk();
-    if (platformType === 'iting') {
-      window?.ly?.ready(() => resolve(true));
+    if (platformType === 'xxxxx') {
+      window?.xxx?.ready(() => resolve(true));
     } else if (platformType === 'wechat') {
       window?.wx?.ready(() => resolve(true));
     } else {
@@ -86,22 +86,14 @@ export const waitSdkReady = () =>
     }
   });
 
-// 站内新开webview
-export function openNewWebview(url: string) {
-  hybridShell('util.openUrl', { url });
-}
-
 /** 登录 */
 export function login() {
   // 站内
-  if (platformType === 'iting') {
+  if (platformType === 'xxxxx') {
     // 登录完成后，页面会reload
-    hybridShell('account.login', {
-      halfScreen: false,
-      control: false
-    });
+    hybridShell('xxx.login');
   } else {
-    window.location.href = `${PASSPORT_ORIGIN}/page/m/login?fromUri=${encodeURIComponent(window.location.href)}`;
+    window.location.href = `${PASSPORT_ORIGIN}/xxx/login?fromUri=${encodeURIComponent(window.location.href)}`;
   }
 }
 
@@ -110,7 +102,7 @@ type ResolveUserInfo = (value?: UserInfo) => void;
 // 客户端获取用户信息
 const nativeUserInfo = () =>
   new Promise((resolve: ResolveUserInfo) => {
-    hybridShell('account.getUserInfo', {
+    hybridShell('xxx.getUserInfo', {
       success({ uid, isLogin, nickName, imgUrl }: UserInfo): void {
         if (isLogin) {
           resolve({
@@ -132,7 +124,7 @@ const nativeUserInfo = () =>
 /** 获取用户信息 */
 export const getUserInfo = () => {
   return new Promise((resolve: ResolveUserInfo) => {
-    if (platformType === 'iting') {
+    if (platformType === 'xxxxx') {
       // 站内
       Promise.all([nativeUserInfo(), queryUserInfo()]).then(
         ([value1, value2]) => {

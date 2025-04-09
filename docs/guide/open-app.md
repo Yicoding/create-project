@@ -12,26 +12,34 @@ nav:
 
 # 唤端
 
-统一使用 `@xmly/landing-common-module` 模块的 [LandingOpenApp](http://react-library.pages.xmly.work/component/landing-common-module#/components/landing-open-app) 组件进行站外唤端
+统一使用 `landing-open-app` 模块的 [LandingOpenApp](https://yicoding.github.io/landing-open-app) 组件进行站外唤端
 
 ## 安装依赖
 
 ```bash
-yarn add @xmly/landing-common-module
+yarn add landing-open-app
 ```
 
 ## 使用
 
 ```tsx | pure
-import { LandingOpenApp } from '@xmly/landing-common-module';
+import React, { useEffect, useState } from 'react';
+import { LandingOpenApp } from 'landing-open-app';
 
 export default () => {
+  const [ready, setReady] = useState(false);
+
+  useEffect(() => {
+    // 微信sdk加载成功后触发
+    setReady(true);
+  }, []);
+
   return (
-    <LandingOpenApp cid="xxx" iting="iting://open?msg_type=14&url=xxx" ready>
-      <button>打开喜马App</button>
+    <LandingOpenApp ready={ready}>
+      <button>打开App</button>
     </LandingOpenApp>
   );
 };
 ```
 
-[参考文档](http://react-library.pages.xmly.work/component/landing-common-module#/components/landing-open-app)
+[参考文档](https://yicoding.github.io/landing-open-app)

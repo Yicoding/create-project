@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 const spawn = require('cross-spawn');
 const inquirer = require('inquirer');
 
-const { REGISTRY_XNPM, regProject, extraDir } = require('./constants');
+const { REGISTRY_NPM, regProject, extraDir } = require('./constants');
 /**
  * yarnpkg add deps
  * @param {Array} deps
@@ -18,7 +18,7 @@ function yarnpkgAdd(deps, error, options = []) {
 
   const proc = spawn.sync(
     'yarn',
-    ['add', ...deps, ...options, '--registry', REGISTRY_XNPM],
+    ['add', ...deps, ...options, '--registry', REGISTRY_NPM],
     {
       stdio: 'inherit',
     },
@@ -241,13 +241,6 @@ function filterFunc(src) {
   );
 }
 
-function expandPkgName(name) {
-  if (name.startsWith('@xmly/') || name.startsWith('@xmc/')) {
-    return name
-  }
-  return `@xmly/${name}`;
-}
-
 // 向文件中追加内容
 function appendDataToFile(filePath, data) {
   const content = fs.readFileSync(filePath, {
@@ -272,6 +265,5 @@ module.exports = {
   createPackageJson,
   filterFuncAddPkg,
   filterFunc,
-  expandPkgName,
   appendDataToFile
 };

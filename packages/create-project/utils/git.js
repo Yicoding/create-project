@@ -22,8 +22,6 @@ function tryGitInit() {
     execSync('git init --initial-branch=master', { stdio: 'ignore' });
     return true;
   } catch (e) {
-    // console.warn('Git repo not initialized', e);
-    // return false;
     try {
       execSync('git init', { stdio: 'ignore' });
       return true;

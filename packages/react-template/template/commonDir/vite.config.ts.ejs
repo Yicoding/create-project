@@ -42,13 +42,13 @@ export default defineConfig(({ mode, command }: ConfigEnv): any => {
     // 本地开发配置
     server: {
       host: true,
-      // host: 'dev.test.ximalaya.com',
+      // host: 'dev.test.xxx.com',
       port: 8080,
       open: true,
       // 配置代理，处理本地开发跨域问题
       proxy: {
         '/proxy_url': {
-          target: 'https://m.test.ximalaya.com',
+          target: 'https://xxx.test.xxx.com',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/proxy_url/, '')
         }

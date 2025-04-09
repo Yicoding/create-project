@@ -10,9 +10,8 @@ const {
   appendDataToFile,
   filterFuncAddPkg,
   createIgnoreFile,
-  expandPkgName
 } = require('../utils/tools');
-const { REGISTRY_XNPM, extraDir } = require('../utils/constants');
+const { REGISTRY_NPM, extraDir } = require('../utils/constants');
 const { checkGitStatus } = require('../utils/git');
 
 async function publish(options) {
@@ -124,7 +123,7 @@ async function publish(options) {
 
   // 创建发布的package.json
   const pkgJson = {
-    name: expandPkgName(name),
+    name,
     version,
     keywords: [],
     description: '',
@@ -150,7 +149,7 @@ async function publish(options) {
     process.chdir(targetPath);
     const procBuild = spawn.sync(
       'npm',
-      ['publish', '--registry', REGISTRY_XNPM],
+      ['publish', '--registry', REGISTRY_NPM],
       {
         stdio: 'inherit',
       },
@@ -166,7 +165,7 @@ async function publish(options) {
 
   // 发布成功
   console.log(chalk.green(`${pkgJson.name} v${pkgJson.version} 发布成功！`));
-  console.log(chalk.green(`查看地址： http://npm.ximalaya.com/package/${pkgJson.name}`));
+  console.log(chalk.green(`查看地址： http://npm.xxx.com/package/${pkgJson.name}`));
 }
 
 module.exports = {

@@ -47,7 +47,7 @@ nav:
 ```js
 proxy: {
   '/proxy_url': {
-    target: 'https://m.test.ximalaya.com',
+    target: 'https://m.test.xxx.com',
     changeOrigin: true,
     rewrite: (path) => path.replace(/^\/proxy_url/, '')
   }
@@ -121,14 +121,14 @@ export default defineConfig({
 ```ts | pure
 import { defineConfig, loadEnv } from 'vite';
 import type { ConfigEnv } from 'vite';
-import react from '@vitejs/plugin-react-swc';
+import react from '@vitejs/plugin-react';
 import legacy from '@vitejs/plugin-legacy';
 import autoprefixer from 'autoprefixer';
-import { minify } from 'terser'; // 引入手动安装的Terser
 import { visualizer } from 'rollup-plugin-visualizer';
 import { viteMockServe } from 'vite-plugin-mock';
 import { manualChunksPlugin } from 'vite-plugin-webpackchunkname';
 import checker from 'vite-plugin-checker';
+import { moveScriptsToBody } from './plugins/moveScriptsToBody';
 
 // 引入 path 包注意两点:
 // 1. 为避免类型报错，你需要通过 `pnpm i @types/node -D` 安装类型
@@ -163,13 +163,13 @@ export default defineConfig(({ mode, command }: ConfigEnv): any => {
     // 本地开发配置
     server: {
       host: true,
-      // host: 'dev.test.ximalaya.com',
+      // host: 'dev.test.xxx.com',
       port: 8080,
       open: true,
       // 配置代理，处理本地开发跨域问题
       proxy: {
         '/proxy_url': {
-          target: 'https://m.test.ximalaya.com',
+          target: 'https://m.test.xxx.com',
           changeOrigin: true,
           rewrite: (path) => path.replace(/^\/proxy_url/, '')
         }
@@ -177,28 +177,15 @@ export default defineConfig(({ mode, command }: ConfigEnv): any => {
     },
     // 构建配置
     build: {
-      // rollup配置
-      rollupOptions: {
-        // 输出配置
-        output: {
-          plugins: [
-            {
-              name: 'terser',
-              async renderChunk(code) {
-                const minified = await minify(code, {
-                  compress: {
-                    // 生产环境删除console
-                    drop_console: mode === 'production'
-                  },
-                });
-                return {
-                  code: minified.code,
-                };
-              }
-            }
-          ]
+      // 生成sourcemap文件
+      sourcemap: true,
+      minify: 'terser',
+      terserOptions: {
+        compress: {
+          // 生产环境删除console.log
+          pure_funcs: mode === 'production' ? ['console.log'] : []
         }
-      }
+      },
     },
     plugins: [
       checker({
@@ -220,6 +207,8 @@ export default defineConfig(({ mode, command }: ConfigEnv): any => {
           'not dead'
         ],
       }),
+      // 自定义插件，将脚本移动到body底部
+      moveScriptsToBody(),
       // mock服务
       mode === 'mock' &&
       viteMockServe({
@@ -233,7 +222,7 @@ export default defineConfig(({ mode, command }: ConfigEnv): any => {
         open: true,
         gzipSize: true,
         brotliSize: true
-      })
+      }),
     ]
   };
 });

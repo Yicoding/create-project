@@ -45,18 +45,18 @@ service.interceptors.request.use((config) => {
 ## 响应拦截
 
 ```ts | pure
+// 响应
 service.interceptors.response.use(
   (response: AxiosResponse<ResponseConstructor>) => {
-    const { ret, data, msg } = response.data;
+    const { ret, data } = response.data;
     if (ret === 0) {
-      // 返回的是response.data.data(可根据项目场景自行修改)
       return data;
     }
-    return Promise.reject(msg);
+    return Promise.reject(response.data);
   },
   (error: AxiosError) => {
     return Promise.reject(error.response);
-  },
+  }
 );
 ```
 

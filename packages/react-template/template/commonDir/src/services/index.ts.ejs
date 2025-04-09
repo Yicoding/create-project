@@ -3,18 +3,18 @@ import type { UserInfo } from '@/utils/types';
 <% if (platform === 'mobile') { %>
 import { isProd } from '@/utils/env';
 <% } %>
-const { VITE_M_ORIGIN } = import.meta.env;
+const { VITE_ORIGIN } = import.meta.env;
 
 /** h5获取用户信息接口 */
 export const queryUserInfo = () => {
-  const url = `${VITE_M_ORIGIN}/business-marketing-user-mobile-web/user/info`;
+  const url = `${VITE_ORIGIN}/xxxx/user/info`;
   return http.get<UserInfo>(url);
 };
 
 <%_ if (platform === 'mobile') { _%>
 /** 微信sdk授权接口 */
 export const queryWechatJssdk = () => {
-  const url = `${VITE_M_ORIGIN}/xthirdparty-web/wechat/jssdk/config/${isProd ? 14 : 17}`;
+  const url = `${VITE_ORIGIN}/wechat/jssdk/config/${isProd ? 1 : 0}`;
   return http.get(url, {
     params: {
       signatureUrl: encodeURIComponent(window.location.href)

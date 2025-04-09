@@ -18,10 +18,10 @@ nav:
 `先进入项目目录，再执行以下命令：`
 
 ```bash
-npx -p @xmly/create-project create-project publish
+npx -p @ecode/create-project create-project publish
 ```
 
-执行命令后会自动将模版发布到内网 npm 中（前提是设置了喜马 xnpm 源）
+执行命令后会自动将模版发布到npm 中
 
 
 执行命令后，会在当前项目创建 `dist-publish` 目录用于发布模版
@@ -47,6 +47,3 @@ npx -p @xmly/create-project create-project publish
     </li>
   </ul> 
 </Tree>
-
-
-

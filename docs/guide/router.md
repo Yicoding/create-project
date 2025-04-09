@@ -21,7 +21,7 @@ nav:
  */
 import Suspenselazy from '@/components/Suspenselazy';
 import { Navigate, RouteObject, createBrowserRouter } from 'react-router-dom';
-
+import { isLocal } from '@/utils/env';
 
 const Index = Suspenselazy(
   () => import(/* webpackChunkName: "index" */ '@/pages/Index')
@@ -62,13 +62,16 @@ const routes: RouteObject[] = [
   }
 ];
 
-const { MODE, VITE_BASE_ROUTE_NAME } = import.meta.env;
+// 获取基础路由名
+const { VITE_BASE_ROUTE_NAME } = import.meta.env;
 
-const localMode = ['mock', 'development'];
-
+// 创建路由
 const router = createBrowserRouter(routes, {
   // 区分本地和线上
-  basename: localMode.includes(MODE) ? '/' : VITE_BASE_ROUTE_NAME
+  basename: isLocal ? '/' : VITE_BASE_ROUTE_NAME,
+  future: {
+    v7_relativeSplatPath: true,
+  },
 });
 
 export default router;
@@ -85,7 +88,14 @@ import router from '@/router';
 import { RouterProvider } from 'react-router-dom';
 
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <RouterProvider
+      router={router}
+      future={{
+        v7_startTransition: true,
+      }}
+    />
+  )
 }
 
 export default App;

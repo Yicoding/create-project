@@ -2,7 +2,9 @@
   "version": "independent",
   "npmClient": "yarn",
   "useWorkspaces": true,
-  "packages": ["packages/*"],
+  "packages": [
+    "packages/*"
+  ],
   "command": {
     "version": {
       "allowBranch": "master",
@@ -10,9 +12,11 @@
       "conventionalCommits": true
     },
     "publish": {
-      "ignoreChanges": ["docs/**"],
+      "ignoreChanges": [
+        "docs/**"
+      ],
       "message": "chore: :bookmark: publish",
-      "registry": "http://xnpm.ximalaya.com/"
+      "registry": "http://xnpm.xxx.com/"
     }
   },
   "changelog": {

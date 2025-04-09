@@ -25,7 +25,7 @@ nav:
         var script = doc.createElement('script');
         script.type = 'text/javascript';
         script.src =
-          '//s1.xmcdn.com/yx/activity-maker-lib/last/dist/vconsole@3.15.1/vconsole.min.js';
+          '//unpkg.com/vconsole@3.15.1/dist/vconsole.min.js';
         doc.body.appendChild(script);
         script.onload = function () {
           var vConsole = new window.VConsole();

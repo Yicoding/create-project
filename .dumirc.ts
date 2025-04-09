@@ -4,9 +4,12 @@ const logo =
   'https://imagev2.xmcdn.com/storages/f8d2-audiofreehighqps/81/43/GMCoOSYIO18uAAAvaAIdYbXD.png';
 
 const publicPath =
-  process.env.NODE_ENV === 'production' ? `/cli/create-project/` : '/';
+  process.env.NODE_ENV === 'production'
+    ? `/create-project/refs/heads/master/`
+    : '/';
 
 export default defineConfig({
+  outputPath: 'site',
   themeConfig: {
     name: 'create-project',
     logo,
@@ -19,8 +22,5 @@ export default defineConfig({
   publicPath,
   alias: {
     images: '/docs/images',
-  },
-  resolve: {
-    docDirs: ['docs'],
   },
 });
