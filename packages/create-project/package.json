@@ -7,11 +7,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://gitlab.xxx.com/react-library/cli/create-project",
+    "url": "https://github.com/Yicoding/create-project",
     "directory": "packages/create-project"
   },
   "bugs": {
-    "url": "https://gitlab.xxx.com/react-library/cli/create-project/issues"
+    "url": "https://github.com/Yicoding/create-project/issues"
   },
   "scripts": {},
   "keywords": [

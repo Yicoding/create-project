@@ -3,14 +3,14 @@
   "version": "0.1.0",
   "description": "react模版",
   "main": "template.json",
-  "homepage": "http://npm.xxx.com/package/@xmly/react-template",
+  "homepage": "https://www.npmjs.com/package/@enode/react-template",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.xxx.com/react-library/cli/create-project",
+    "url": "https://github.com/Yicoding/create-project",
     "directory": "packages/react-template"
   },
   "bugs": {
-    "url": "https://gitlab.xxx.com/react-library/cli/create-project/issues"
+    "url": "https://github.com/Yicoding/create-project/issues"
   },
   "keywords": [
     "react-template"
