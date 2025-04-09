@@ -5,7 +5,7 @@ const logo =
 
 const publicPath =
   process.env.NODE_ENV === 'production'
-    ? `/create-project/refs/heads/master/`
+    ? `/create-project/master/`
     : '/';
 
 export default defineConfig({
