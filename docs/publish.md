@@ -18,7 +18,7 @@ nav:
 `先进入项目目录，再执行以下命令：`
 
 ```bash
-npx -p @ecode/create-project create-project publish
+npx -p @enode/create-project create-project publish
 ```
 
 执行命令后会自动将模版发布到npm 中

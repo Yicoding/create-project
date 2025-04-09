@@ -1,6 +1,6 @@
 {
-  "name": "@ecode/react-template",
-  "version": "0.3.1",
+  "name": "@enode/react-template",
+  "version": "0.0.0",
   "description": "react模版",
   "main": "template.json",
   "homepage": "http://npm.xxx.com/package/@xmly/react-template",
@@ -27,5 +27,5 @@
     "template",
     "CHANGELOG.md"
   ],
-  "gitHead": "25f92a15242397e4f91112f9583e9336a63a4505"
+  "gitHead": "dcb1fb554a84bfb427ba6288fc37e7684d4f01b1"
 }

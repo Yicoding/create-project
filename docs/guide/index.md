@@ -28,7 +28,7 @@ v18.13.0
 ```bash
 # 进入需要创建项目的目录
 # 脚手架创建项目，选择你需要的模板
-$ npx -p @ecode/create-project create-project
+$ npx -p @enode/create-project create-project
 
 # 输入项目名称
 $ ? 请输入项目英文名称（小写字母或数字、中划线连接）： vite-mobile
