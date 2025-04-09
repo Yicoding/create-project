@@ -1,8 +1,0 @@
-**/*.svg
-**/*.ejs
-**/*.html
-package.json
-docs
-.dumi/tmp
-.dumi/tmp-production
-*.yaml

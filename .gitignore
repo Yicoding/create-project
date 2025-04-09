@@ -1,25 +1,28 @@
-# Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-node_modules
-dist
-dist-ssr
-.dumi/tmp
-.dumi/tmp-production
+# dependencies
+/node_modules
+/npm-debug.log*
+/yarn-error.log
+/yarn.lock
+/package-lock.json
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
+# production
+/dist
+/docs-dist
+/site
+/es
+/lib
+
+# misc
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# umi
+.umi
+.umi-production
+.umi-test
+.env.local
+
+# ide
+/.vscode
+/.idea
