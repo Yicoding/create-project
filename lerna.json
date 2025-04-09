@@ -16,7 +16,7 @@
         "docs/**"
       ],
       "message": "chore: :bookmark: publish",
-      "registry": "http://xnpm.xxx.com/"
+      "registry": "https://registry.npmjs.org/"
     }
   },
   "changelog": {

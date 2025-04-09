@@ -33,5 +33,6 @@
     "inquirer": "^8.2.5",
     "replace-in-file": "^6.3.5",
     "standard-version": "^9.5.0"
-  }
+  },
+  "gitHead": "893debb685d9e80318470d7c0e7e0a48804fdd6c"
 }
