@@ -1,6 +1,6 @@
 {
   "name": "@ecode/create-project",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "用于快速创建项目的脚手架",
   "bin": {
     "create-project": "bin/index.js"

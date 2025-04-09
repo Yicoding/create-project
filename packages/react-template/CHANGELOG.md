@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://gitlab.xxx.com/react-library/cli/create-project/compare/@ecode/react-template@0.2.0...@ecode/react-template@0.3.0) (2025-04-09)
+
+### Features
+
+- 发布权限 ([8fea420](https://gitlab.xxx.com/react-library/cli/create-project/commit/8fea420d78b3ca29cd364d352e3a584e32f91f04))
+
 # [0.2.0](https://gitlab.xxx.com/react-library/cli/create-project/compare/@ecode/react-template@0.1.0...@ecode/react-template@0.2.0) (2025-04-09)
 
 ### Features
