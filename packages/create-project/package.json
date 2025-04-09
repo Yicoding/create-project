@@ -1,6 +1,6 @@
 {
   "name": "@ecode/create-project",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "用于快速创建项目的脚手架",
   "bin": {
     "create-project": "bin/index.js"
@@ -24,6 +24,9 @@
     "kaiyu.kong"
   ],
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "chalk": "^4.1.2",
     "commander": "^10.0.1",
@@ -34,5 +37,5 @@
     "replace-in-file": "^6.3.5",
     "standard-version": "^9.5.0"
   },
-  "gitHead": "062a6c05ae2715b475a130d157de9fe047ce8ad6"
+  "gitHead": "25f92a15242397e4f91112f9583e9336a63a4505"
 }
