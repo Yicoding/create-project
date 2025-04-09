@@ -6,6 +6,7 @@ on:
       - master
       - v*
     paths:
+      - packages/**
       - docs/**
       - typings/**
       - .umirc.js
