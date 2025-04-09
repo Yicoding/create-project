@@ -1,0 +1,29 @@
+{
+  "name": "@ecode/react-template",
+  "version": "0.0.0",
+  "description": "react模版",
+  "main": "template.json",
+  "homepage": "http://npm.ximalaya.com/package/@xmly/react-template",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.ximalaya.com/react-library/cli/create-project",
+    "directory": "packages/react-template"
+  },
+  "bugs": {
+    "url": "https://gitlab.ximalaya.com/react-library/cli/create-project/issues"
+  },
+  "keywords": [
+    "react-template"
+  ],
+  "author": "kaiyu.kong <kaiyu.kong@ximalaya.com>",
+  "maintainers": [
+    "kaiyu.kong <kaiyu.kong@ximalaya.com>"
+  ],
+  "license": "ISC",
+  "files": [
+    "template",
+    "template.json.ejs",
+    "CHANGELOG.md"
+  ],
+  "gitHead": "2b1984204c0f72797e6529873237672fdef5df92"
+}

@@ -1,0 +1,127 @@
+.root {
+  .mask {
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    min-width: 290px;
+    max-width: 640px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fade-in 0.4s linear;
+    z-index: 999;
+    touch-action: none;
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
+  .guidanceBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 1.6rem;
+    padding-top: 1.2rem;
+    z-index: 1000;
+    & > img {
+      width: 18rem;
+      align-self: flex-end;
+    }
+    & > div {
+      height: 4.6rem;
+      width: 24.8rem;
+      border-radius: 0.4rem;
+      background: #585858;
+      color: #fff;
+      font-size: 1.8rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  }
+  
+  .panel {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    max-width: 640px;
+    height: 200px;
+    margin: 0 auto;
+    padding: 22px 0;
+    text-align: center;
+    font-size: 0;
+    color: #878787;
+    border-radius: 10px 10px 0 0;
+    background: #fff;
+    animation: my-show 0.3s;
+    @keyframes my-show {
+      from {
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .close {
+      position: absolute;
+      top: 13px;
+      right: 13px;
+      width: 13px;
+      height: 13px;
+    }
+    .title {
+      position: relative;
+      margin: 3px 0;
+      font: 14px normal;
+      line-height: 1;
+      ::before,
+      ::after {
+        position: absolute;
+        top: 6.5px;
+        content: '';
+        width: 30px;
+        height: 1px;
+        background: #878787;
+      }
+      ::before {
+        margin-left: -36px;
+      }
+      ::after {
+        margin-left: 6px;
+      }
+    }
+    .link {
+      margin: 30px 0;
+      padding: 10px;
+      background: #3da2fc;
+      border-radius: 50%;
+    }
+    .icon {
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: url(https://imagev2.xmcdn.com/group48/M04/5C/B1/wKgKnFt818DD78LvAAAGpF9EonA156.png!op_type=9&strip=1&quality=0&unlimited=1);
+      background-size: 100% 100%;
+    }
+    .text {
+      margin: 0;
+      font-size: 12px;
+    }
+  }
+}

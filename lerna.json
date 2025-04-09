@@ -1,0 +1,29 @@
+{
+  "version": "independent",
+  "npmClient": "yarn",
+  "useWorkspaces": true,
+  "packages": ["packages/*"],
+  "command": {
+    "version": {
+      "allowBranch": "master",
+      "includeMergedTags": true,
+      "conventionalCommits": true
+    },
+    "publish": {
+      "ignoreChanges": ["docs/**"],
+      "message": "chore: :bookmark: publish",
+      "registry": "http://xnpm.ximalaya.com/"
+    }
+  },
+  "changelog": {
+    "labels": {
+      "pr(enhancement)": ":rocket: Enhancement",
+      "pr(bug)": ":bug: Bug Fix",
+      "pr(documentation)": ":book: Documentation",
+      "pr(dependency)": ":deciduous_tree: Dependency",
+      "pr(chore)": ":turtle: Chore"
+    },
+    "repo": "commercial-activity-maker/create-library",
+    "cacheDir": ".changelog"
+  }
+}

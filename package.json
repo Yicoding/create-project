@@ -1,0 +1,45 @@
+{
+  "private": true,
+  "author": "kaiyu.kong <kaiyu.kong@ximalaya.com>",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "dumi dev",
+    "build": "dumi build",
+    "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
+    "pub": "lerna publish",
+    "commit": "cz"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "dumi": "^2.2.0",
+    "lerna": "^6.6.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.8.7",
+    "yorkie": "^2.0.0"
+  },
+  "gitHooks": {
+    "commit-msg": "commitlint -E GIT_PARAMS"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "lint-staged": {
+    "*.{md,json}": [
+      "prettier --write --no-error-on-unmatched-pattern"
+    ]
+  }
+}

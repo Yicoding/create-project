@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    // tsconfig.node.json 中设置 `allowSyntheticDefaultImports: true`，以允许下面的 default 导入方式
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["vite.config.ts", "plugins/**/*"]
+}

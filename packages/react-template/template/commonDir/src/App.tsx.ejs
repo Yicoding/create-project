@@ -1,0 +1,57 @@
+import { useEffect } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import * as Sentry from '@sentry/react';
+import router from '@/router';
+<% if (platform === 'mobile') { %>
+import { hideLoading, platformType, setTheme } from '@/utils/tools';
+import { setState } from '@/store';
+import { waitWechatReady } from '@/utils/hybrid';
+<% } else { %>
+import { hideLoading, setTheme } from '@/utils/tools';
+<% } %>
+
+function App() {
+
+  // 获取主题
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    if (theme) {
+      setTheme(theme);
+    }
+  }, []);
+
+  // 隐藏loading
+  useEffect(() => {
+    setTimeout(hideLoading, 500);
+  }, []);
+
+  <%_ if (platform === 'mobile') { _%>
+  // 路由切换后，需重新初始化微信sdk（根据当前url进行签名验证）
+  useEffect(() => {
+    type Unsubscribe = () => void;
+    let unsubscribe: Unsubscribe;
+    if (platformType === 'wechat') {
+      unsubscribe = router.subscribe((state, asdf) => {
+        console.log('路由切换', state, asdf);
+        waitWechatReady(() => setState({ sdkReady: true }))
+      });
+    }
+    return () => {
+      unsubscribe && unsubscribe();
+    };
+  }, []);
+  <%_ } _%>
+
+  return (
+    <Sentry.ErrorBoundary>
+      <RouterProvider
+        router={router}
+        future={{
+          v7_startTransition: true,
+        }}
+      />
+    </Sentry.ErrorBoundary>
+  )
+}
+
+export default App;
