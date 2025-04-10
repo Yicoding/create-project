@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.2.0...@enode/react-template@0.3.0) (2025-04-10)
+
+### Features
+
+- add ([e44d037](https://github.com/Yicoding/create-project/commit/e44d0374d5d66a6820b0545a8b45f881ef713994))
+
 # [0.2.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.1.0...@enode/react-template@0.2.0) (2025-04-09)
 
 ### Features

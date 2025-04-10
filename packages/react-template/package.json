@@ -1,6 +1,6 @@
 {
   "name": "@enode/react-template",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "react模版",
   "main": "template.json",
   "homepage": "https://www.npmjs.com/package/@enode/react-template",
