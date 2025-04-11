@@ -25,4 +25,4 @@ npx -p @enode/create-project create-project transform [模板名]
 npx -p @enode/create-project create-project transform [模板名] <模版存放目录>
 ```
 
-[在线文档](https://yicoding.github.io/create-project)
+[文档](https://yicoding.github.io/create-project)
