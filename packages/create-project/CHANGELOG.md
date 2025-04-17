@@ -1,3 +1,16 @@
+# Change Log
+
+All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
+
+# [0.3.0](https://github.com/Yicoding/create-project/compare/@enode/create-project@0.2.0...@enode/create-project@0.3.0) (2025-04-17)
+
+### Features
+
+- 修改发布代码 ([dffb1d6](https://github.com/Yicoding/create-project/commit/dffb1d631b99a52d0f334f195ff7962947d7b578))
+
+## 0.2.1 (2025-04-17)
+
 # Changelog
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
