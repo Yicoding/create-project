@@ -14,14 +14,12 @@ nav:
 
 ## 环境准备
 
-确保正确安装 [Node.js](https://nodejs.org/en) 且版本为 `18+` or `20+`。（注意：云效发布的 node 版本也需要选择 `18+` or `20+`）
+确保正确安装 [Node.js](https://nodejs.org/en) 且版本为 `20+`。
 
 ```bash
 $ node -v
-v18.13.0
+v20.19.0
 ```
-
-![](images/node-version.png)
 
 ## 脚手架
 

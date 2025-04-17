@@ -52,9 +52,6 @@ const { VITE_BASE_ROUTE_NAME } = import.meta.env;
 const router = createBrowserRouter(routes, {
   // 区分本地和线上
   basename: isLocal ? '/' : VITE_BASE_ROUTE_NAME,
-  future: {
-    v7_relativeSplatPath: true,
-  },
 });
 
 export default router;

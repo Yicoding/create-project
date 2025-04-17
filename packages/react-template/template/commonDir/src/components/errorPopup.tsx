@@ -227,7 +227,7 @@ const ErrorPopupComponent: React.FC<ErrorPopupProps> = ({
   };
 
   // 优化URL显示的函数 - 在小屏幕和大屏幕都有良好显示
-  const formatPath = (url: string): JSX.Element => {
+  const formatPath = (url: string): React.ReactElement => {
     // 提取URL各部分
     let match = url.match(/^(https?:\/\/[^\/]+)(.*)$/);
 

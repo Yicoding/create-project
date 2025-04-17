@@ -6,8 +6,8 @@ hero:
   actions:
     - text: 快速开始
       link: /guide
-    - text: gitlab
-      link: https://gitlab.xxx.com/react-library/cli/create-project
+    - text: github
+      link: https://github.com/Yicoding/create-project
 features:
   - title: 极速的开发响应速度
     emoji: 🚀

@@ -131,8 +131,8 @@ const SimplePortal = ({
 
   if (isValidElement(children)) {
     // 安全地处理样式合并
-    const childStyle = (children as ReactElement).props.style || {};
-    enhancedChildren = cloneElement(children as ReactElement, {
+    const childStyle = (children as ReactElement<{ style?: CSSProperties }>).props.style || {};
+    enhancedChildren = cloneElement(children as ReactElement<{ style?: CSSProperties }>, {
       style: {
         ...childStyle,
         ...portalStyles
