@@ -120,7 +120,7 @@ async function download(templateName, name, prefix, options) {
   }
 
   // 替换特定名称
-  const regex = /projectName2/g;
+  const regex = new RegExp('<%= projectName %>', 'g');
   replace.sync({
     files: path.join(rootProject, '**/{*,.*}'),
     from: regex,
