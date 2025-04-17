@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.9.0...@enode/react-template@0.10.0) (2025-04-17)
+
+### Features
+
+- 优化 SimplePortal ([0fdae39](https://github.com/Yicoding/create-project/commit/0fdae39d56b06f8489084ef188b14f8c021d2150))
+
 # [0.9.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.8.0...@enode/react-template@0.9.0) (2025-04-17)
 
 ### Features
