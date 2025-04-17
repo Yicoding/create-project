@@ -4,7 +4,7 @@
  * defaultShowCode: true
  */
 
-import { Button } from 'components';
+import { Button } from '<%= projectName %>';
 
 export default () => {
   <Button>Button</Button>
