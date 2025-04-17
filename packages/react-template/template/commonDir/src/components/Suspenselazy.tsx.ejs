@@ -1,0 +1,25 @@
+import React, { Suspense, lazy } from 'react';
+<%_ if (platform === 'pc') { _%>
+import { Skeleton } from 'antd';
+<%_ } else { _%>
+import { Skeleton } from 'antd-mobile';
+<%_ } _%>
+
+const Suspenselazy = (props: any) => {
+  return (
+    <Suspense fallback={(
+      <>
+        <%_ if (platform === 'pc') { _%>
+        <Skeleton active />
+        <%_ } else { _%>
+        <Skeleton.Title animated />
+        <Skeleton.Paragraph lineCount={5} animated />
+        <%_ } _%>
+      </>
+    )}>
+      {React.createElement(lazy(props))}
+    </Suspense>
+  );
+};
+
+export default Suspenselazy;
