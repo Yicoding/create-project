@@ -5,12 +5,12 @@ nav:
   path: /components
 ---
 
-# components
+# projectName
 
 ## 安装
 
 ```bash
-yarn add components
+yarn add projectName
 ```
 
 ## 使用方式
