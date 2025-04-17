@@ -120,17 +120,14 @@ async function download(templateName, name, prefix, options) {
   }
 
   // 替换特定名称
-  try {
-    console.log('替换特定名称', projectName);
-    replace.sync({
-      files: path.join(rootProject, '**/*'),
-      from: /projectName2/g,
-      to: 'helloww',
-      ignore: ['**/node_modules/**'],
-    });
-  } catch (error) {
-    console.log(chalk.red('替换特定名称出错了', error));
-  }
+  console.log('替换特定名称', projectName);
+  const regex = new RegExp('<%= projectName %>', 'g');
+  replace.sync({
+    files: path.join(rootProject, '**/*'),
+    from: regex,
+    to: projectName,
+    ignore: ['**/node_modules/**'],
+  });
 
   // 替换文件内容
   if (replaceContent) {
