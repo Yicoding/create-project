@@ -126,7 +126,6 @@ async function download(templateName, name, prefix, options) {
       files: path.join(rootProject, '**/*'),
       from: regex,
       to: projectName,
-      ignore: ['**/node_modules/**'],
     });
   } catch (error) {
     console.log(chalk.red('替换特定名称出错了', error));
