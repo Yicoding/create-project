@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/Yicoding/create-project/compare/@enode/create-project@0.8.0...@enode/create-project@0.9.0) (2025-04-17)
+
+### Features
+
+- 替换规则 ([7e531f1](https://github.com/Yicoding/create-project/commit/7e531f1c4b53c7ab67ed503005ab879b419ac25d))
+
 # [0.8.0](https://github.com/Yicoding/create-project/compare/@enode/create-project@0.7.0...@enode/create-project@0.8.0) (2025-04-17)
 
 ### Features

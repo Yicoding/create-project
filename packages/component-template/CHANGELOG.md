@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.3.0...@enode/component-template@0.4.0) (2025-04-17)
+
+### Features
+
+- 替换规则 ([7e531f1](https://github.com/Yicoding/create-project/commit/7e531f1c4b53c7ab67ed503005ab879b419ac25d))
+
 # [0.3.0](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.2.2...@enode/component-template@0.3.0) (2025-04-17)
 
 ### Features
