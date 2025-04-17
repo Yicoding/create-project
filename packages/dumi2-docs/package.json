@@ -1,0 +1,16 @@
+{
+  "name": "@enode/dumi2-docs",
+  "version": "0.0.0",
+  "keywords": [],
+  "description": "",
+  "author": "kaiyu.kong",
+  "maintainers": [
+    "kaiyu.kong"
+  ],
+  "main": "template.json",
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.json"
+  ]
+}
