@@ -1,6 +1,6 @@
 {
   "name": "@enode/dumi2-docs",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "keywords": [],
   "description": "",
   "author": "kaiyu.kong",
@@ -13,5 +13,8 @@
     "template",
     "template.json"
   ],
-  "gitHead": "0686c1c9a1ab3de693cc1e38db40605f2cf3841b"
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "9a14bb5597f99422559907fa9ae33e3a75bf4818"
 }
