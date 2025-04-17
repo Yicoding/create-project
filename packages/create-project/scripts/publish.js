@@ -155,7 +155,7 @@ async function publish(options) {
 
   // 发布成功
   console.log(chalk.green(`${pkgJson.name} v${pkgJson.version} 发布成功！`));
-  console.log(chalk.green(`查看地址： http://npm.xxx.com/package/${pkgJson.name}`));
+  console.log(chalk.green(`查看地址： https://www.npmjs.com/package/${pkgJson.name}`));
 }
 
 module.exports = {
