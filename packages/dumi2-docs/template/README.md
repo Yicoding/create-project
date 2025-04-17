@@ -8,6 +8,10 @@
 npx @enode/create-project download @enode/dumi2-docs
 ```
 
+## 环境准备
+
+确保正确安装 [Node.js](https://nodejs.org/en) 且版本为 `18+`。
+
 ## 操作
 
 ```bash
