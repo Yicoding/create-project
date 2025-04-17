@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.8.0...@enode/react-template@0.9.0) (2025-04-17)
+
+### Features
+
+- 升级 react19 ([bf80bca](https://github.com/Yicoding/create-project/commit/bf80bcaf7bf02cddc085cf1fa7e47a7971c75b39))
+
 # [0.8.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.7.0...@enode/react-template@0.8.0) (2025-04-11)
 
 ### Features
