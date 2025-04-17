@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.2.0](https://github.com/Yicoding/create-project/compare/@enode/dumi2-docs@1.1.0...@enode/dumi2-docs@1.2.0) (2025-04-17)
+
+### Features
+
+- readme ([50caa36](https://github.com/Yicoding/create-project/commit/50caa36364e65432294ad46da27d680ca25c6d1b))
+
 # [1.1.0](https://github.com/Yicoding/create-project/compare/@enode/dumi2-docs@0.3.0...@enode/dumi2-docs@1.1.0) (2025-04-17)
 
 ### Features
