@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.2.2...@enode/component-template@0.3.0) (2025-04-17)
+
+### Features
+
+- add ([e3d3eb0](https://github.com/Yicoding/create-project/commit/e3d3eb0914e9fecb01740d6850b499609d5f9408))
+
 ## [0.2.2](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.2.1...@enode/component-template@0.2.2) (2025-04-17)
 
 **Note:** Version bump only for package @enode/component-template
