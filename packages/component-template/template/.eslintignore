@@ -1,0 +1,10 @@
+*.js
+node_modules
+.dumi
+
+dist
+es
+lib
+
+**/__tests__/*
+**/demos/*

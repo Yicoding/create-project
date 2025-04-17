@@ -1,0 +1,20 @@
+{
+  "name": "@enode/component-template",
+  "version": "0.0.0",
+  "keywords": [],
+  "description": "",
+  "author": "kaiyu.kong",
+  "maintainers": [
+    "kaiyu.kong"
+  ],
+  "main": "template.json",
+  "license": "MIT",
+  "files": [
+    "template",
+    "template.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "9a14bb5597f99422559907fa9ae33e3a75bf4818"
+}

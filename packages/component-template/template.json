@@ -1,0 +1,96 @@
+{
+  "package": {
+    "description": "",
+    "bugs": {
+      "url": ""
+    },
+    "repository": {
+      "type": "git",
+      "url": ""
+    },
+    "license": "MIT",
+    "authors": [],
+    "maintainers": [],
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "types": "es/index.d.ts",
+    "files": [
+      "es",
+      "lib"
+    ],
+    "scripts": {
+      "start": "npm run dev",
+      "dev": "dumi dev",
+      "build": "father build && yarn less:build",
+      "build:watch": "father dev",
+      "less:build": "gulp",
+      "commit": "git-cz",
+      "docs:build": "dumi build",
+      "doctor": "father doctor",
+      "lint": "npm run lint:es && npm run lint:css",
+      "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
+      "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
+      "prepare": "husky install && dumi setup",
+      "prepublishOnly": "father doctor && npm run build",
+      "pub": "git add . && changeset && changeset version && changeset publish && git push --follow-tags"
+    },
+    "commitlint": {
+      "extends": [
+        "@commitlint/config-conventional"
+      ]
+    },
+    "lint-staged": {
+      "*.{md,json}": [
+        "prettier --write --no-error-on-unmatched-pattern"
+      ],
+      "*.{css,less}": [
+        "stylelint --fix",
+        "prettier --write"
+      ],
+      "*.{ts,tsx}": [
+        "eslint --fix",
+        "prettier --parser=typescript --write"
+      ]
+    },
+    "config": {
+      "commitizen": {
+        "path": "./node_modules/cz-conventional-changelog"
+      }
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "gulp": "^5.0.0",
+      "gulp-less": "^5.0.0",
+      "gulp-rename": "^2.0.0",
+      "@changesets/cli": "^2.26.2",
+      "@commitlint/cli": "^17.1.2",
+      "@commitlint/config-conventional": "^17.1.0",
+      "@types/react": "^18.0.0",
+      "@types/react-dom": "^18.0.0",
+      "@types/react-lazyload": "^3.2.2",
+      "@umijs/lint": "^4.0.0",
+      "commitizen": "^4.3.0",
+      "cz-conventional-changelog": "^3.3.0",
+      "dumi": "^2.2.13",
+      "eslint": "^8.23.0",
+      "father": "^4.1.0",
+      "husky": "^8.0.1",
+      "lint-staged": "^13.0.3",
+      "prettier": "^2.7.1",
+      "prettier-plugin-organize-imports": "^3.0.0",
+      "prettier-plugin-packagejson": "^2.2.18",
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0",
+      "styled-components": "^6.1.0",
+      "stylelint": "^14.9.1"
+    },
+    "peerDependencies": {
+      "react": ">=16.8.0",
+      "react-dom": ">=16.8.0",
+      "styled-components": ">=5.0.0"
+    },
+    "publishConfig": {
+      "access": "public"
+    }
+  }
+}
