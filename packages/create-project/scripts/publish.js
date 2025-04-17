@@ -18,9 +18,6 @@ async function publish(options) {
 
   checkGitStatus()
 
-  // 待删除的scripts数组，支持删除多个
-  const { deleteScripts } = options;
-
   // 待转换项目的根路径
   const currentProjectPath = process.cwd();
   const pkgFileName = 'package.json';
@@ -42,6 +39,23 @@ async function publish(options) {
   if (!fs.existsSync(pkgFilePath)) {
     console.log(
       chalk.red(`没有检测到${pkgFileName}，请检查当前目录是否为项目的根目录`),
+    );
+    process.exit(1);
+  }
+
+  // 读取package.json
+  const { name, version, author, maintainers, ...originPkgJson } = fs.readJsonSync(pkgFilePath);
+
+  if (!author) {
+    console.log(
+      chalk.yellow('\npackage.json中必须包含 author 字段\n'),
+    );
+    process.exit(1);
+  }
+
+  if (!maintainers) {
+    console.log(
+      chalk.yellow('\npackage.json中必须包含 maintainers 字段\n'),
     );
     process.exit(1);
   }
@@ -81,33 +95,10 @@ async function publish(options) {
 
   /** 移动后改写文件 */
   // 改写.gitignore文件
-  createIgnoreFile(templateDir, '.gitignore', 'gitignore');
-  appendDataToFile(gitignoreFilePath, targetDirName)
-
-  // 读取package.json
-  const { name, version, author, maintainers, ...originPkgJson } = fs.readJsonSync(pkgFilePath);
-
-  if (!author) {
-    console.log(
-      chalk.yellow('\npackage.json中必须包含 author 字段\n'),
-    );
-    process.exit(1);
-  }
-
-  if (!maintainers) {
-    console.log(
-      chalk.yellow('\npackage.json中必须包含 maintainers 字段\n'),
-    );
-    process.exit(1);
-  }
-
-  if (deleteScripts) {
-    deleteScripts.forEach(item => {
-      if (item) {
-        delete originPkgJson.scripts[item]
-      }
-    })
-  }
+  try {
+    createIgnoreFile(templateDir, '.gitignore', 'gitignore');
+    appendDataToFile(gitignoreFilePath, targetDirName)
+  } catch { }
 
   // 创建template.json
   const templateJson = {
@@ -119,7 +110,6 @@ async function publish(options) {
     path.join(targetPath, tmpFileName),
     JSON.stringify(templateJson, null, 2) + os.EOL,
   );
-
 
   // 创建发布的package.json
   const pkgJson = {

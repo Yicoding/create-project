@@ -44,7 +44,6 @@ program
 // 将当前项目直接发布成npm模版
 program
   .command('publish')
-  .option('-d, --delete-scripts [delete-scripts...]', 'delete scripts')
   .action((options) => {
     // 将当前项目直接发布成npm模版
     publish(options);
