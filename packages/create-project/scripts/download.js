@@ -122,7 +122,7 @@ async function download(templateName, name, prefix, options) {
   // 替换特定名称
   const regex = /projectName2/g;
   replace.sync({
-    files: path.join(rootProject, '**/*'),
+    files: path.join(rootProject, '**/{*,.*}'),
     from: regex,
     to: projectName,
     ignore: ['**/node_modules/**'],
