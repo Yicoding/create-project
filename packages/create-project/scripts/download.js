@@ -125,7 +125,8 @@ async function download(templateName, name, prefix, options) {
     replace.sync({
       files: path.join(rootProject, '**/*'),
       from: regex,
-      to: projectName,
+      to: 'helloww',
+      ignore: ['**/node_modules/**'],
     });
   } catch (error) {
     console.log(chalk.red('替换特定名称出错了', error));
