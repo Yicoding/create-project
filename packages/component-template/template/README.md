@@ -1,4 +1,4 @@
-# <%= projectName %>
+# projectName2
 
 # 介绍
 

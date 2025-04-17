@@ -121,10 +121,9 @@ async function download(templateName, name, prefix, options) {
 
   // 替换特定名称
   try {
-    const regex = new RegExp('<%= projectName %>', 'g');
     replace.sync({
       files: path.join(rootProject, '**/*'),
-      from: regex,
+      from: /projectName2/g,
       to: 'helloww',
       ignore: ['**/node_modules/**'],
     });
