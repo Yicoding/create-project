@@ -121,6 +121,7 @@ async function download(templateName, name, prefix, options) {
 
   // 替换特定名称
   try {
+    console.log('替换特定名称', projectName);
     replace.sync({
       files: path.join(rootProject, '**/*'),
       from: /projectName2/g,
