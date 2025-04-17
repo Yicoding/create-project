@@ -120,7 +120,6 @@ async function download(templateName, name, prefix, options) {
   }
 
   // 替换特定名称
-  console.log('替换特定名称', projectName);
   const regex = new RegExp('<%= projectName %>', 'g');
   replace.sync({
     files: path.join(rootProject, '**/*'),
@@ -128,6 +127,7 @@ async function download(templateName, name, prefix, options) {
     to: projectName,
     ignore: ['**/node_modules/**'],
   });
+  console.log('替换特定名称', projectName, regex);
 
   // 替换文件内容
   if (replaceContent) {
