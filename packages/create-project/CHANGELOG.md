@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.12.0](https://github.com/Yicoding/create-project/compare/@enode/create-project@0.11.0...@enode/create-project@0.12.0) (2025-04-18)
+
+### Features
+
+- component-template 完成 ([5c1caac](https://github.com/Yicoding/create-project/commit/5c1caac534e50bdc44dd3924356a8ff0a57d6a7b))
+
 # [0.11.0](https://github.com/Yicoding/create-project/compare/@enode/create-project@0.10.0...@enode/create-project@0.11.0) (2025-04-18)
 
 ### Features
