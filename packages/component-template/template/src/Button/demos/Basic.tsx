@@ -4,8 +4,10 @@
  * defaultShowCode: true
  */
 
-import { Button } from '<%= projectName %>';
+import { Button } from 'oooopp';
 
 export default () => {
-  <Button>Button</Button>
+  return (
+    <Button>Button</Button>
+  )
 };

@@ -5,7 +5,7 @@ hero:
   description: A static site based on dumi2
   actions:
     - text: 快速开始
-      link: /guide
+      link: /components/button
 features:
   - title: Hello
     emoji: 🚀

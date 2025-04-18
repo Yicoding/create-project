@@ -127,7 +127,6 @@ async function download(templateName, name, prefix, options) {
     to: projectName,
     ignore: ['**/node_modules/**'],
   });
-  console.log('替换特定名称233111hello', rootProject, projectName, regex);
 
   // 替换文件内容
   if (replaceContent) {
