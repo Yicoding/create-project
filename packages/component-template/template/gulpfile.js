@@ -2,31 +2,60 @@ const gulp = require('gulp');
 const less = require('gulp-less');
 const path = require('path');
 const rename = require('gulp-rename');
+const fs = require('fs');
 
-// 定义源目录
-const directories = ['es', 'lib'];
+// 处理目录列表
+const dirs = ['es', 'lib'];
 
-// 动态地为每个目录生成任务
-directories.forEach((dir) => {
-  const taskName = `less-${dir}`;
-
-  // 定义任务函数
-  gulp.task(taskName, () => {
-    return gulp.src(`./${dir}/**/*.less`)
-      .pipe(less({
-        paths: [path.join(__dirname, 'less', 'includes')]
-      }))
-      .pipe(rename((filePath) => {
-        // 保持目录结构,修改扩展名
-        filePath.dirname = path.join(filePath.dirname);
-        filePath.extname = '.css';
-      }))
-      .pipe(gulp.dest(`./${dir}`));  // 将生成的 CSS 文件放置在原始 LESS 文件同级目录中
-  });
+// 1. 编译Less文件为CSS
+dirs.forEach(dir => {
+  gulp.task(`less-${dir}`, () =>
+    gulp.src(`./${dir}/**/*.less`)
+      .pipe(less({ paths: [path.join(__dirname, 'less', 'includes')] })
+        .on('error', function (err) {
+          console.error(`Less Error: ${err.fileName} - ${err.message}`);
+          this.emit('end');
+        })
+      )
+      .pipe(rename(p => { p.extname = '.css'; }))
+      .pipe(gulp.dest(`./${dir}`))
+  );
 });
 
-// 定义并行执行所有 less 任务的任务
-gulp.task('less', gulp.parallel(directories.map(dir => `less-${dir}`)));
+// 2. 修复JS文件中的.less引用
+gulp.task('fix-imports', (done) => {
+  // 递归处理目录
+  function processDir(dir) {
+    const files = fs.readdirSync(dir);
 
-// 默认任务
-gulp.task('default', gulp.series('less'));
+    for (const file of files) {
+      const fullPath = path.join(dir, file);
+      const stat = fs.statSync(fullPath);
+
+      if (stat.isDirectory()) {
+        processDir(fullPath);
+      }
+      else if (file.endsWith('.js')) {
+        // 处理JS文件
+        let content = fs.readFileSync(fullPath, 'utf8');
+        if (content.includes('.less')) {
+          content = content.replace(/\.less/g, '.css');
+          fs.writeFileSync(fullPath, content, 'utf8');
+        }
+      }
+    }
+  }
+
+  // 处理lib和es目录
+  dirs.forEach(dir => {
+    if (fs.existsSync(dir)) {
+      processDir(dir);
+    }
+  });
+
+  done();
+});
+
+// 3. 组合任务
+gulp.task('less', gulp.parallel(dirs.map(dir => `less-${dir}`)));
+gulp.task('default', gulp.series('less', 'fix-imports'));
