@@ -1,6 +1,6 @@
 import React from 'react';
 
-const prefixCls = 'components-button';
+const prefixCls = '<%= projectName %>-button';
 
 interface ButtonProps {
   children?: any;

@@ -13,10 +13,6 @@ nav:
 yarn add <%= projectName %>
 ```
 
-## 使用方式
-
-xxx
-
 ## 基本用法
 
 <code src="./demos/Basic.tsx"></code>
