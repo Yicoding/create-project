@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.6.0](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.5.0...@enode/component-template@0.6.0) (2025-04-18)
+
+### Features
+
+- 优化 gulp ([5cfc4df](https://github.com/Yicoding/create-project/commit/5cfc4df0d266417a8aba46962f6e365aca2a69e8))
+
 # [0.5.0](https://github.com/Yicoding/create-project/compare/@enode/component-template@0.4.0...@enode/component-template@0.5.0) (2025-04-18)
 
 ### Features
