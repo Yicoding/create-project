@@ -154,48 +154,48 @@
   <script>
     this.globalThis || (this.globalThis = this) // 兼容低版本浏览器Error: globalThis is not defined
   </script>
-  <%_ if (platform==='mobile' || platform==='pc' ) { _%>
-    <!-- 处理rem -->
-    <script type="text/javascript">
-      !(function (doc, win) {
-        try {
-          var docEl = doc.documentElement;
-          resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
-          var recalc = function () {
-            var clientWidth = docEl.clientWidth;
-            if (!clientWidth) return;
-            docEl.style.fontSize = 10 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
+  <%_ if (platform==='mobile') { _%>
+  <!-- 处理rem -->
+  <script type="text/javascript">
+    !(function (doc, win) {
+      try {
+        var docEl = doc.documentElement;
+        resizeEvt = 'orientationchange' in win ? 'orientationchange' : 'resize';
+        var recalc = function () {
+          var clientWidth = docEl.clientWidth;
+          if (!clientWidth) return;
+          docEl.style.fontSize = 10 * ((clientWidth >= 750 ? 750 : clientWidth) / 375) + 'px';
+        };
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+      } catch (error) {
+        console.log('计算rem error: ', error);
+      }
+    })(document, window);
+  </script>
+  <!-- 添加vconsole -->
+  <script type="text/javascript">
+    !(function (doc) {
+      try {
+        var _log_debug = /_log_debug/.test(window.location.href);
+        if (_log_debug) {
+          var script = doc.createElement('script');
+          script.type = 'text/javascript';
+          script.src =
+            '//unpkg.com/vconsole@3.15.1/dist/vconsole.min.js';
+          doc.body.appendChild(script);
+          script.onload = function () {
+            var vConsole = new window.VConsole();
           };
-          if (!doc.addEventListener) return;
-          win.addEventListener(resizeEvt, recalc, false);
-          doc.addEventListener('DOMContentLoaded', recalc, false);
-        } catch (error) {
-          console.log('计算rem error: ', error);
         }
-      })(document, window);
-    </script>
-    <!-- 添加vconsole -->
-    <script type="text/javascript">
-      !(function (doc) {
-        try {
-          var _log_debug = /_log_debug/.test(window.location.href);
-          if (_log_debug) {
-            var script = doc.createElement('script');
-            script.type = 'text/javascript';
-            script.src =
-              '//unpkg.com/vconsole@3.15.1/dist/vconsole.min.js';
-            doc.body.appendChild(script);
-            script.onload = function () {
-              var vConsole = new window.VConsole();
-            };
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      })(document);
-    </script>
-    <%_ } _%>
-      <script type="module" src="/src/main.tsx"></script>
+      } catch (error) {
+        console.error(error);
+      }
+    })(document);
+  </script>
+  <%_ } _%>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 
 </html>
