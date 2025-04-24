@@ -58,3 +58,6 @@ https://aod.cos.tx.xmcdn.com/storages/d814-audiofreehighqps/CE/85/GAqh9sAL4APVAB
 
 选择 `待转换项目目录`，点击 `确认` 按钮即可进行转换
 
+## 常用技术站点
+
+![](images/site-1.png)
