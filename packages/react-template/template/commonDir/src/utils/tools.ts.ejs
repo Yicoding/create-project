@@ -39,10 +39,7 @@ export function getPlatform(): Platform {
   let platform: Platform = 'xxxxx';
 
   const ua = window.navigator.userAgent;
-  const impl = getCookie('impl') || '';
-  if (/xxxxx/i.test(ua) || /xxxxx/i.test(impl)) {
-    platform = 'xxxxx';
-  } else if (/wxwork/i.test(ua)) {
+  if (/wxwork/i.test(ua)) {
     // 企业微信
     platform = 'wecom';
   } else if (/micromessenger/i.test(ua)) {
@@ -51,10 +48,6 @@ export function getPlatform(): Platform {
     platform = 'weibo';
   } else if (/qq\//i.test(ua)) {
     platform = 'qq';
-  } else if (/ximalayababy/i.test(ua)) {
-    platform = 'ximalayababy';
-  } else if (/xiaoya/i.test(ua)) {
-    platform = 'xiaoya';
   } else {
     platform = '_default';
   }

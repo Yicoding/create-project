@@ -17,8 +17,8 @@ nav:
 
 ## 下载地址
 
-[点我下载：](https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg)
-https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5ABAAAAMEd90U.dmg
+[点我下载：](https://aod.cos.tx.xmcdn.com/storages/d814-audiofreehighqps/CE/85/GAqh9sAL4APVABAAAAOe_ApM.dmg)
+https://aod.cos.tx.xmcdn.com/storages/d814-audiofreehighqps/CE/85/GAqh9sAL4APVABAAAAOe_ApM.dmg
 
 ## 安装
 
@@ -50,10 +50,6 @@ https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5AB
 
 ![](images/cli-2.png)
 
-授权系统权限
-
-![](images/cli-3.png)
-
 ## 将项目转换为模版 npm
 
 点击 `将项目转换为模版npm`
@@ -61,10 +57,4 @@ https://aod.cos.tx.xxcdn.com/storages/fb0b-audiofreehighqps/78/57/GKwRINsKnfT5AB
 ![](images/cli-4.png)
 
 选择 `待转换项目目录`，点击 `确认` 按钮即可进行转换
-
-![](images/cli-5.png)
-
-转换完成：
-
-![](images/cli-6.png)
 
