@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.14.0...@enode/react-template@0.15.0) (2025-04-25)
+
+### Features
+
+- react-router-dom-v7 配置 ([b3944e9](https://github.com/Yicoding/create-project/commit/b3944e99ad59271063311f007a204e8eac2951d9))
+
 # [0.14.0](https://github.com/Yicoding/create-project/compare/@enode/react-template@0.13.0...@enode/react-template@0.14.0) (2025-04-24)
 
 ### Features
