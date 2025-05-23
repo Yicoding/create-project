@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [1.3.0](https://github.com/Yicoding/create-project/compare/@enode/dumi2-docs@1.2.0...@enode/dumi2-docs@1.3.0) (2025-05-23)
+
+### Features
+
+- nvmrc ([0336e91](https://github.com/Yicoding/create-project/commit/0336e913e179e034eeb72689a7fd497413f23c13))
+
 # [1.2.0](https://github.com/Yicoding/create-project/compare/@enode/dumi2-docs@1.1.0...@enode/dumi2-docs@1.2.0) (2025-04-17)
 
 ### Features
