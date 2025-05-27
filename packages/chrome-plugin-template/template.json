@@ -1,0 +1,27 @@
+{
+  "package": {
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "private": true,
+    "author": "",
+    "scripts": {
+      "build": "vite build",
+      "build:watch": "vite build --watch"
+    },
+    "dependencies": {
+      "react": "^19.1.0",
+      "react-dom": "^19.1.0"
+    },
+    "devDependencies": {
+      "@types/chrome": "^0.0.323",
+      "@types/react": "^19.1.2",
+      "@types/react-dom": "^19.1.2",
+      "@vitejs/plugin-react": "^4.0.3",
+      "less": "^4.3.0",
+      "typescript": "^5.8.3",
+      "vite": "^6.2.4",
+      "vite-plugin-static-copy": "^0.13.0"
+    }
+  }
+}

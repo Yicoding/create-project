@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Doubao Chat Helper",
+  "version": "1.0",
+  "description": "Automatically navigate to Doubao chat and fill in text",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.doubao.com/*"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.doubao.com/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
