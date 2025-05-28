@@ -16,6 +16,26 @@ body {
 }
 
 <%_ if (platform === 'mobile') { _%>
+/* 首次加载时使用 CSS 方案 */
+@media screen and (max-width: 750px) {
+  html {
+    font-size: calc(100vw / 37.5);
+  }
+}
+
+/* 防止字体大小过小 */
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 8.53px;
+  }
+}
+
+/* 防止字体大小过大 */
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 20px;
+  }
+}
 #root {
   position: relative;
   min-width: 290px;
