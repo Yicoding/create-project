@@ -94,6 +94,7 @@ export default defineConfig(({ mode, command }: ConfigEnv) => {
           'not dead'
         ],
         <%_ } _%>
+        // modernPolyfills: true // 现代浏览器 polyfill
       }),
       // 自定义插件，将脚本移动到body底部
       moveScriptsToBody(),
