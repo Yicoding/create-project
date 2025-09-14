@@ -1,7 +1,9 @@
 import { FC } from 'react';
+import { useShallow } from 'zustand/react/shallow';
 import { Link, useNavigate } from 'react-router-dom';
 import { css } from '@emotion/react'
 import clsx from 'clsx';
+
 import { useBearStore, setState } from '@/store';
 import type { BearState } from '@/store';
 import { toggleTheme } from '@/utils/tools';
@@ -18,7 +20,10 @@ const boxStyle = css`
 const Index: FC = () => {
   const navigate = useNavigate();
 
-  const { bears, increase, } = useBearStore((state: BearState) => state);
+  const { bears, increase, } = useBearStore(useShallow((state: BearState) => ({
+    bears: state.bears,
+    increase: state.increase,
+  })));
 
   const handleClickLink = () => {
     navigate('/home/detail'); // 跳转路由

@@ -67,12 +67,17 @@ export const { setState } = useBearStore;
 
 ```tsx | pure
 import { FC } from 'react';
+import { useShallow } from 'zustand/react/shallow';
+
 import { useBearStore, setState } from '@/store';
 import type { BearState } from '@/store';
 
 const Index: FC = () => {
 
-  const { bears, increase, } = useBearStore((state: BearState) => state);
+  const { bears, increase, } = useBearStore(useShallow((state: BearState) => ({
+    bears: state.bears,
+    increase: state.increase,
+  })));
 
   return (
     <div>
