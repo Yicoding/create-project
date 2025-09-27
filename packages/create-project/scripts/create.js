@@ -13,6 +13,7 @@ const {
   createIgnoreFile,
   yarnpkgAdd,
   yarnpkgRemoveModules,
+  removeRootProject
 } = require('../utils/tools');
 const { regProject, templateName } = require('../utils/constants');
 
